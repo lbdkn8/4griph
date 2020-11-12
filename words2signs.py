@@ -36,7 +36,7 @@ def find_vids(v):
         if vfile in prepws:
             v[ws] = rf'{os.getcwd()}\\{vfile}'
         else:
-            os.chdir(rf'{gdata_p}\\{sletters_f}')
+            os.chdir(f'{gdata_p}\\{sletters_f}')
             letters = [rf'{os.getcwd()}\\{l}.{fileform}' for l in ws]
             separator = rf'{gdata_p}\\{sepfile}'
             letters.insert(0, separator)
@@ -62,6 +62,7 @@ def play_vids(vids):
         cap.release()
 
     for i in vids:
+        print(i)
         if type(i) is list:
             for v in i:
                 play(v)
@@ -72,7 +73,7 @@ def play_vids(vids):
 
 # определяем домашнюю директорию перед главным циклом
 home_p = os.getcwd()
-gdata_p = rf'{home_p}\\{gdata_f}'
+gdata_p = f'{home_p}\\{gdata_f}'
 
 # Первый, главный цикл - рабочее приложение
 sw1 = True
